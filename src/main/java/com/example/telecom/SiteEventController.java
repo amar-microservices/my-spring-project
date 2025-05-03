@@ -38,8 +38,8 @@ public class SiteEventController {
     }
     
     @GetMapping("/messages")
-    public String printMessage() {
-    	return "I am for Pull Request";
+    public ResponseEntity<String> printMessage() {
+    	return ResponseEntity.ok( "I am for Pull Request");
     }
     
     
