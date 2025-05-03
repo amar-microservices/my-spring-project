@@ -22,4 +22,9 @@ public class SiteEventController {
         kafkaTemplate.send("site-events", event.getSiteId(), msg);
         return ResponseEntity.ok("Event sent to Kafka");
     }
+    
+    @GetMapping
+    public ResponseEntity<String> getMessage(){
+    	return ResponseEntity.ok("I am new added to application");
+    }
 }
