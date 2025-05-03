@@ -37,4 +37,10 @@ public class SiteEventController {
     	return ResponseEntity.ok(messages);
     }
     
+    @GetMapping("/messages")
+    public String printMessage() {
+    	return "I am for Pull Request";
+    }
+    
+    
 }
