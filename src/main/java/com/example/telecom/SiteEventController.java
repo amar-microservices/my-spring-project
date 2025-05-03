@@ -2,6 +2,10 @@ package com.example.telecom;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +28,13 @@ public class SiteEventController {
     }
     
     @GetMapping
-    public ResponseEntity<String> getMessage(){
-    	return ResponseEntity.ok("I am new added to application");
+    public ResponseEntity<List<String>> getMessage(){
+    	String strHello = "hello";
+    	String strBye = "Bye";
+    	List<String> messages = new ArrayList<>();
+    	messages.add(strHello);
+    	messages.add(strBye);
+    	return ResponseEntity.ok(messages);
     }
+    
 }
